@@ -1,4 +1,5 @@
 # AskVOCO ![logo](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/verySimpleApp/voco.png "Logo Title Text 1")
+![home_page](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/verySimpleApp/home_page.png "Logo Title Text 1")
 
 AskVOCO is a online multi-label news classification platform. It is also a part of the project which is about building better news recommender system for smart speakers, collaborating with the company VOCO. The long-term plan of this project is to do news classification, which is aleady done, build user profile and finally make custormized news recommendation.
 
@@ -28,24 +29,11 @@ To use the pre-trained Bert Model, you need to download:
 1. The source code of Bert from Google-research: download [here](https://github.com/google-research/bert.git).
 2. The pre-trained model: considering the computational cost, I use [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip).
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
 ## Processing Pipeline
 
 ### Data
 I got the data from the company VOCO, which contains around 200 manually labelled articles. I also crawled about 1000 articles from news websites. There are 11 classess in the data: Football, Tech, Baseball, Basketball, Canadian National, Hockey, International, Finance, US National, Science, Soccer. Each article belongs to one or more classes. Following is the basic analysis of the data:
+
 ![# of classes](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/num_classes.png "Logo Title Text 1")
 ![# of words](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/hist.png "Logo Title Text 1")
 
@@ -80,7 +68,7 @@ Notice: Since it's a multi-label classification task, the softmax layer should b
 
 The web app was deployed based on Flask and AWS EC2. All needed files are contained in /verySimpleApp. 
 This is the home page of the website:
-![home_page](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/verySimpleApp/home_page.png "Logo Title Text 1")
+
 Enter the news in the textbox and then click "Classify":
 ![Page_2](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/Page_2.png "Logo Title Text 1")
 The website will return you the classification result:
