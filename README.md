@@ -1,4 +1,4 @@
-# AskVOCO
+# AskVOCO ![logo](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/verySimpleApp/voco.png "Logo Title Text 1")
 
 AskVOCO is a online multi-label news classification platform. It is also a part of the project which is about building better news recommender system for smart speakers, collaborating with the company VOCO. The long-term plan of this project is to do news classification, which is aleady done, build user profile and finally make custormized news recommendation.
 
@@ -46,25 +46,45 @@ until finished
 
 ### Data
 I got the data from the company VOCO, which contains around 200 manually labelled articles. I also crawled about 1000 articles from news websites. There are 11 classess in the data: Football, Tech, Baseball, Basketball, Canadian National, Hockey, International, Finance, US National, Science, Soccer. Each article belongs to one or more classes. Following is the basic analysis of the data:
-![alt text](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/num_classes.png "Logo Title Text 1")
+![# of classes](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/num_classes.png "Logo Title Text 1")
+![# of words](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/hist.png "Logo Title Text 1")
 
-Explain what these tests test and why
+### Preprocessing
+Preprocessing includes converting all letters to the lower case, removing stop words, removing punctuations, remocing stop words and tokenization. These could be done by running:
+1. pre-processing.py
+2. large-processing.py
+Also the above scripts could convert the data to a form that Bert could use.
+### Feature Extraction
+Converting words to vectors that classifiers can recognize is a key procedure for classification. For simple classifiers, TF-IDF is used for feature extraction. For Bert, the input is just the one-hot representing of the article since it could do embedding inside the model.
 
-```
-Give an example
-```
+### Models
+To implement the simple classifiers(knn and decision tree): run simple_classier.py.
 
-### And coding style tests
+To fine-tune Bert: run mybert.py. Most of this part of code is from https://github.com/google-research/bert/blob/master/run_classifier.py
 
-Explain what these tests test and why
+Notice: Since it's a multi-label classification task, the softmax layer should be changed to sigmoid layer. Besides, the loss function used here is tf.nn.sigmoid_cross_entropy_with_logits.
 
-```
-Give an example
-```
+### Metrics
+1. Hamming Loss:  the fraction of labels that are incorrectly predicted
+2. Subset Accuracy: the percentage of samples that have all their labels classified correctly
 
-## Deployment
+### Results
+| Classifier        | Subset Accuracy(%)           | Hamming Loss  |
+| ------------- |:-------------:| -----:|
+| pre-trained Bert| 81.57 | 2.06 |
+| knn      | 64.14      |  4.59 |
+| Decision Tree | 55.22      |    6.68 |
 
-Add additional notes about how to deploy this on a live system
+
+## AskVOCO web App
+
+The web app was deployed based on Flask and AWS EC2. All needed files are contained in /verySimpleApp. 
+This is the home page of the website:
+![home_page](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/verySimpleApp/home_page.png "Logo Title Text 1")
+Enter the news in the textbox and then click "Classify":
+![Page_2](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/Page_2.png "Logo Title Text 1")
+The website will return you the classification result:
+![Page_3](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/Page_3.png "Logo Title Text 1")
 
 ## Built With
 
@@ -95,4 +115,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
