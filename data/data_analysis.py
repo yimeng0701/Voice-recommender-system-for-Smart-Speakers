@@ -53,11 +53,11 @@ if __name__ == "__main__":
     
     plt.barh(np.arange(len(classes)),num)
     for xx, yy in zip(np.arange(len(classes)),num):
-        plt.text(yy+0.6, xx-0.2, str(yy), ha='center')
+        plt.text(yy+8, xx-0.2, str(yy), ha='center')
+#    my_x_ticks = np.arange(0, 351, 50)
+#    plt.xticks(my_x_ticks)
     plt.yticks(np.arange(len(classes)),classes)
     plt.xlabel("number")
-
-    
     plt.title("number of classes")
     plt.tight_layout()
     plt.savefig('num_classes.png',transparent=True)
@@ -70,10 +70,10 @@ if __name__ == "__main__":
     plt.bar(x, y, width=0.3)
     for xx, yy in zip(x,y):
         plt.text(xx, yy, str(yy), ha='center')
-    my_x_ticks = np.arange(1, 2.1, 1)
-    my_y_ticks = np.arange(0, 166, 20)
-    plt.xticks(my_x_ticks)
-    plt.yticks(my_y_ticks)
+#    my_x_ticks = np.arange(1, 2.1, 1)
+#    my_y_ticks = np.arange(0, 166, 20)
+#    plt.xticks(my_x_ticks)
+#    plt.yticks(my_y_ticks)
     plt.xlabel("number of labels")
     plt.title("How many samples have multiple labels?")
     plt.savefig('labels.png', transparent=True)
@@ -82,8 +82,8 @@ if __name__ == "__main__":
     
     
     plt.hist(words, bins=30)
-    my_y_ticks = np.arange(0, 21, 1)
-    plt.yticks(my_y_ticks)
+    #my_x_ticks = np.arange(0, 6000, 1000)
+    #plt.xticks(my_x_ticks)
     # x label
     plt.xlabel("number of words")
     # y label
