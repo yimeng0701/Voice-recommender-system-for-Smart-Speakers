@@ -55,7 +55,7 @@ Notice: Since it's a multi-label classification task, the softmax layer should b
 2. Subset Accuracy: the percentage of samples that have all their labels classified correctly
 
 ### Results
-| Classifier        | Subset Accuracy(%)           | Hamming Loss  |
+| Classifier        | Subset Accuracy(%)           | Hamming Loss (%)  |
 | ------------- |:-------------:| -----:|
 | pre-trained Bert| 81.57 | 2.06 |
 | knn      | 64.14      |  4.59 |
