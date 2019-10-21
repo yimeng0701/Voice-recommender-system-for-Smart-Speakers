@@ -45,7 +45,7 @@ until finished
 ## Processing Pipeline
 
 ### Data
-I got the data from the company VOCO, which contains around 200 manually labelled articles. I also crawled about 1000 articles from news websites. There are 11 classess in the data: Football, Tech, Baseball, Basketball, Canadian National, Hockey, International, Finance, US National, Science, Soccer. Each article belongs to one or more classes. Following is the basic analysis of the data:
+I got the data from the company VOCO, which contains around 200 manually labelled articles. 1000 other articles from different news websites are also crawled. There are 11 classess in the data: Football, Tech, Baseball, Basketball, Canadian National, Hockey, International, Finance, US National, Science, Soccer. Each article belongs to one or more classes. Following is the basic analysis of the data:
 ![# of classes](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/num_classes.png "Logo Title Text 1")
 ![# of words](https://github.com/yimeng0701/Voice-recommender-system-for-Smart-Speakers/blob/master/data/EDA/hist.png "Logo Title Text 1")
 
