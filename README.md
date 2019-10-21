@@ -28,20 +28,6 @@ To use the pre-trained Bert Model, you need to download:
 1. The source code of Bert from Google-research: download [here](https://github.com/google-research/bert.git).
 2. The pre-trained model: considering the computational cost, I use [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip).
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
 ## Processing Pipeline
 
 ### Data
